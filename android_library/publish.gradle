@@ -4,7 +4,7 @@ group 'com.android_library'
 version '1.0.0'
 
 project.ext {
-    mavGitUrl = 'https://github.com/igorrrj/LibDemo'
+    mavGitUrl = 'https://github.com/igorrrj/LibDemo.git'
     mavProjectName = 'AndroidLib'
     mavLibraryLicenses = ["Apache-2.0":'http://www.apache.org/licenses/LICENSE-2.0.txt']
     mavLibraryDescription = "An Android library"
@@ -18,16 +18,16 @@ properties.load(new FileInputStream("local.properties"))
 bintray {
     user = properties.getProperty("bintray.user")
     key = properties.getProperty("bintray.apikey")
-    publications = ['Production']
+    publications = ['mavenPublish']
     configurations = ['archives']
     override = true
     pkg {
-        repo = 'maven'
+        repo = 'First_Library'
         name = 'AndroidLib'
         description = "It's an Android lib"
         publicDownloadNumbers = true
         licenses = ['Apache-2.0']
-        vcsUrl = 'https://github.com/igorrrj/LibDemo'
+        vcsUrl = 'https://github.com/igorrrj/LibDemo.git'
         version {
             name = this.version
             desc = "Version ${this.version}"
